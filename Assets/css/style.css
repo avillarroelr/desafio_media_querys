@@ -1,0 +1,224 @@
+/*----------- css General --------------*/
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        "menu menu menu"
+        "search search search"
+        "main main main"
+        "footer footer footer";
+        }
+}
+/*========================== CSS Movile  ======================= */
+/*----------- Menú de navegación ------------------------*/
+nav {
+    grid-area: menu;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap:25%
+}
+nav section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    text-align: start;
+    gap: 5px;
+}
+.icons_material {
+    color: white;
+    font-size: 32px;
+}
+ /*--- Oculta lista del Menú ----*/
+ul {
+    display: none;
+}
+/*----------- Sección de filtros de búsqueda -----------*/
+article {
+    grid-area: search;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+select {
+    width: 80%;
+    margin-bottom:  10px;
+    padding: 10px;
+}
+option {
+    width: 200px;
+}
+/*----------- Sección Principal ---------------------*/
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    color: red;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    padding: 10px;
+}
+figure {
+    display: none;
+}
+main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+button {
+    background-color: whitesmoke;
+    color: red;
+    padding: 10px;
+    border: 1px solid;
+    border-color: lightgray;
+    cursor: pointer;
+    margin: 0;
+}
+/*----------- Pie de página ---------------------*/
+footer {
+    grid-area: footer;
+    background-color: crimson;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+/*=================== css Desktop =======================*/
+@media (min-width: 576px) {
+    .container {
+        display: grid;
+        grid-template-areas:
+        "menu search"
+        "menu main"
+        "footer main";
+        grid-template-columns: auto 1fr;
+    }
+    /*----------- Menú de navegación ------------------------*/
+    nav {
+        grid-area: menu;
+        background-color: red;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    nav section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: white;
+        gap: 5px;
+    }
+    /*--- Oculta Icono Menu ----*/
+    .mdi-menu {
+        display: none;
+    }
+    .icons_material {
+        color: white;
+        font-size: 32px;
+    }
+    /*--- Muestra lista del Menú ----*/
+    ul {
+        color: white;
+        font-weight: bold;
+        display: block;
+    }
+    /*----------- Sección de filtros de búsqueda -----------*/
+    article {
+        grid-area: search;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: white;
+    }
+    select {
+        width: 80%;
+        margin-bottom:  10px;
+        padding: 10px;
+    }
+    option {
+        width: 80%;
+    }
+    /*----------- Sección Principal ---------------------*/
+    main {
+        grid-area: main;
+    }
+    .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    gap:20px
+    }
+    figure img {
+        max-width: 70%; 
+        height: auto; 
+    }
+    main article {
+        display: none;
+    }
+    main figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        text-align: center;
+        align-items: center;
+        color: red;
+        margin-bottom: 2%;
+        border-radius: 5px;
+    }
+    main section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+    }
+    button {
+        background-color: whitesmoke;
+        color: red;
+        border: 1px solid;
+        border-color: lightgray;
+        cursor: pointer;
+        margin: 0;
+    }
+    /*----------- Pie de página ---------------------*/
+    footer {
+        grid-area: footer;
+        background-color: crimson;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+}
